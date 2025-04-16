@@ -112,6 +112,35 @@ This repository does **not** contain any real or internal data. All input/output
 
 ---
 
+## 🔧 Customization
+
+This redaction script has been **customized for a transit safety dataset** that includes both structured and unstructured text. It contains targeted logic to detect and redact:
+
+- Vehicle numbers and identifiers (e.g., "Bus 1234", "Train 45-67")
+- Personnel names following transit-related job titles (e.g., "Operator Smith", "Conductor (Doe)")
+- Internal identifiers such as unit numbers, consist information, license plates, and tracking codes
+- **Date information is intentionally preserved**, as it is critical for understanding incident timelines in safety reports
+
+The script combines:
+- Domain-specific regular expressions tailored for transit incident narratives
+- The open-source [`pii_codex`](https://github.com/EdyVision/pii-codex) library for general PII redaction
+- Rule-based exceptions and normalization for better accuracy in public safety data
+
+---
+
+## 🛠️ Adapting for Your Own Data
+
+You can adapt this script to fit your own data and use cases. To do this:
+
+1. **Update the regular expressions** to match terminology or identifier patterns specific to your domain (e.g., healthcare, finance, legal).
+2. Adjust the redaction logic to preserve or redact context-specific fields such as job titles, timestamps, or organizational labels.
+3. Replace the data source by editing the section that references `df2['Event Description']` to match your own input data column or format.
+4. Modify the data loading/saving logic if using formats other than CSV (e.g., Excel, JSON, databases).
+
 ## 🙌 Acknowledgments
 
 - [pii_codex](https://github.com/EdyVision/pii-codex) for the foundational PII detection framework
+
+
+
+
