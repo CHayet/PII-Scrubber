@@ -114,7 +114,7 @@ This repository does **not** contain any real or internal data. All input/output
 
 ## 🔧 Customization
 
-This redaction script has been **customized for a transit safety dataset** that includes both structured and unstructured text. It contains targeted logic to detect and redact:
+This script has been **customized for a transit safety dataset** that includes both structured and unstructured text. It contains targeted logic to detect and redact:
 
 - Vehicle numbers and identifiers (e.g., "Bus 1234", "Train 45-67")
 - Personnel names following transit-related job titles (e.g., "Operator Smith", "Conductor (Doe)")
